@@ -6,6 +6,7 @@ class Eksctl < Formula
   sha256 "20a7729273f73049c0fc892798f7fd1d34204fe5818a2befc32bc264affb45f3"
   
   depends_on "kubernetes-cli"
+  depends_on "eksctl-aws-iam-authenticator"
 
   def install
     bin.install "eksctl"
