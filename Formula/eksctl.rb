@@ -1,9 +1,9 @@
 class Eksctl < Formula
   desc "a CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  url "https://github.com/weaveworks/eksctl/releases/download/0.1.15/eksctl_Darwin_amd64.tar.gz"
-  version "0.1.15"
-  sha256 "f3207798469e6f26195b7adcc40e25e543a58072b1f84f987bb1986af625fd73"
+  url "https://github.com/weaveworks/eksctl/releases/download/0.1.16/eksctl_Darwin_amd64.tar.gz"
+  version "0.1.16"
+  sha256 "0f5858bf8cd66b4f651a69b647403b1aad58999dedeb62098bedc9ca3d9f103a"
   
   depends_on "kubernetes-cli"
   depends_on "eksctl-aws-iam-authenticator"
