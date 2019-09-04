@@ -2,14 +2,14 @@
 class Eksctl < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "0.4.3"
+  version "0.5.0"
 
   if OS.mac?
-    url "https://github.com/weaveworks/eksctl/releases/download/0.4.3/eksctl_Darwin_amd64.tar.gz"
-    sha256 "0733d7c84ba1e25bdbd7a43205438e7cec57f8e0232f083b95e47ffae417a254"
+    url "https://github.com/weaveworks/eksctl/releases/download/0.5.0/eksctl_Darwin_amd64.tar.gz"
+    sha256 "1a719dcc8dcf48d311442cf6bf64176b5ac4df7cfd214c27bad8ffa7b6947b84"
   elsif OS.linux?
-    url "https://github.com/weaveworks/eksctl/releases/download/0.4.3/eksctl_Linux_amd64.tar.gz"
-    sha256 "9719545c84a3297ff59be7f4ff32dd312b4e103f95a9e7caffeb99530f57419a"
+    url "https://github.com/weaveworks/eksctl/releases/download/0.5.0/eksctl_Linux_amd64.tar.gz"
+    sha256 "7b24b1865fc5de425cd56b2d8015ebfa7e4d2220571eee83f902712ac6d93b0d"
   end
   
   depends_on "kubernetes-cli"
