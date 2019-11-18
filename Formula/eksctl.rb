@@ -6,10 +6,10 @@ class Eksctl < Formula
 
   if OS.mac?
     url "https://github.com/weaveworks/eksctl/releases/download/0.10.0/eksctl_Darwin_amd64.tar.gz"
-    sha256 "3780c5d4b17f9e44ea703acd24a3be37eeffd6fce5b8277fcdd9489126402f10"
+    sha256 "7d2927d92fae543b1bace887fae185e1bc98c8df32e477180b24e2ff60784901"
   elsif OS.linux?
     url "https://github.com/weaveworks/eksctl/releases/download/0.10.0/eksctl_Linux_amd64.tar.gz"
-    sha256 "f48e56ebbfe4648142c983b61df1bf577807e5de61126a1ee5e264b3eda8a71a"
+    sha256 "220d42e431f36a4d0a3bb65b0a007a50c86b475559712725aa593414619e8fa1"
   end
   
   depends_on "kubernetes-cli"
