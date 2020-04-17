@@ -2,17 +2,17 @@
 class EksctlPrivate < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "latest_rc"
+  version "0.20.0-rc.0"
 
   if OS.mac?
-    url "https://github.com/weaveworks/eksctl-private/releases/download/latest_rc/eksctl_Darwin_amd64.tar.gz"
-    sha256 "e9cae1c677437162188522d7bdbe2e95854e24a45d6da47766ca0c0162ad3fd9"
+    url "https://github.com/weaveworks/eksctl-private/releases/download/0.20.0-rc.0/eksctl_Darwin_amd64.tar.gz"
+    sha256 "e7de1876d32a5b577533d8783462ddadc3d67171174e3967a0a8a5bfb9ad6b6d"
   elsif OS.linux?
-    url "https://github.com/weaveworks/eksctl-private/releases/download/latest_rc/eksctl_Linux_amd64.tar.gz"
-    sha256 "27eb23e0ebecf52ac5f9cd14525691d3b0cf69a04bc4daa9f8ade653bafc702b"
+    url "https://github.com/weaveworks/eksctl-private/releases/download/0.20.0-rc.0/eksctl_Linux_amd64.tar.gz"
+    sha256 "c293818ca4e1fbba25a6206f8eab317cfce018665c1e0ad3d541f5bf010ed91e"
   end
   
-  head https://github.com/weaveworks/eksctl/releases/download/{{.Version}}/eksctl_Darwin_amd64.tar.gz
+  head https://github.com/weaveworks/eksctl/releases/download/0.20.0-rc.0/eksctl_Darwin_amd64.tar.gz
   
   depends_on "kubernetes-cli"
   depends_on "aws-iam-authenticator"
