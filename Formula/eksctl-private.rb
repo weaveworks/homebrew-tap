@@ -6,17 +6,16 @@ class EksctlPrivate < Formula
 
   if OS.mac?
     url "https://github.com/weaveworks/eksctl-private/releases/download/latest_release/eksctl_Darwin_amd64.tar.gz"
-    sha256 "d33be8ebe6cdbac0344c5271a93566d2e35d0f2a5fe1e5193e6c6c8ddbc0e761"
+    sha256 "1f2068fa9f12e342b77ef875fbb7a62fa7a9e83c6e5c0ee5f5ea7b6b787e72ee"
   elsif OS.linux?
     url "https://github.com/weaveworks/eksctl-private/releases/download/latest_release/eksctl_Linux_amd64.tar.gz"
-    sha256 "71d92b9ad639631676fb273b2e24281313feba42d283904dd398ea646c0d974f"
+    sha256 "b86fdae2e684046394a4f5c4e692734628cd2edba0f9bde7e8d566aea6f1d592"
   end
   
   head https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_Darwin_amd64.tar.gz
   
   depends_on "kubernetes-cli"
   depends_on "aws-iam-authenticator"
-  depends_on ""
 
   def install
     bin.install "eksctl"
