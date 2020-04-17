@@ -2,15 +2,17 @@
 class EksctlPrivate < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "0.18.0-rc.0"
+  version "latest_rc"
 
   if OS.mac?
-    url "https://github.com/weaveworks/eksctl-private/releases/download/0.18.0-rc.0/eksctl_Darwin_amd64.tar.gz"
-    sha256 "c194ad99489c34514f4fbf826b8cac3c8fe382b1041b71d1c120c479e229913a"
+    url "https://github.com/weaveworks/eksctl-private/releases/download/latest_rc/eksctl_Darwin_amd64.tar.gz"
+    sha256 "e9cae1c677437162188522d7bdbe2e95854e24a45d6da47766ca0c0162ad3fd9"
   elsif OS.linux?
-    url "https://github.com/weaveworks/eksctl-private/releases/download/0.18.0-rc.0/eksctl_Linux_amd64.tar.gz"
-    sha256 "6c01980da498262d0a92f6b696a75d684e40e733fd8b35c6c8d9f397369d0287"
+    url "https://github.com/weaveworks/eksctl-private/releases/download/latest_rc/eksctl_Linux_amd64.tar.gz"
+    sha256 "27eb23e0ebecf52ac5f9cd14525691d3b0cf69a04bc4daa9f8ade653bafc702b"
   end
+  
+  head https://github.com/weaveworks/eksctl/releases/download/{{.Version}}/eksctl_Darwin_amd64.tar.gz
   
   depends_on "kubernetes-cli"
   depends_on "aws-iam-authenticator"
