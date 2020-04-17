@@ -2,14 +2,14 @@
 class EksctlPrivate < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "0.22.0"
+  version "latest_release"
 
   if OS.mac?
-    url "https://github.com/weaveworks/eksctl-private/releases/download/0.22.0/eksctl_Darwin_amd64.tar.gz"
-    sha256 "5fe7b83f14dd065610177e78620ce1008eef96856d3b9b8095e0fd8dbe06d436"
+    url "https://github.com/weaveworks/eksctl-private/releases/download/latest_release/eksctl_Darwin_amd64.tar.gz"
+    sha256 "d33be8ebe6cdbac0344c5271a93566d2e35d0f2a5fe1e5193e6c6c8ddbc0e761"
   elsif OS.linux?
-    url "https://github.com/weaveworks/eksctl-private/releases/download/0.22.0/eksctl_Linux_amd64.tar.gz"
-    sha256 "9e80a8264f09b6b4a2970b23cf5567aed3cbb13f6c7b5589fec8b1e5b0ff6a10"
+    url "https://github.com/weaveworks/eksctl-private/releases/download/latest_release/eksctl_Linux_amd64.tar.gz"
+    sha256 "71d92b9ad639631676fb273b2e24281313feba42d283904dd398ea646c0d974f"
   end
   
   head https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_Darwin_amd64.tar.gz
