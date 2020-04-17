@@ -6,10 +6,10 @@ class EksctlPrivate < Formula
 
   if OS.mac?
     url "https://github.com/weaveworks/eksctl-private/releases/download/latest_release/eksctl_Darwin_amd64.tar.gz"
-    sha256 "65b38654d1cf467706079dfae04763350aa37f06af752b898b8445d82b763c75"
+    sha256 "170f33bf54a5ee6144a78f79f946d67a309037b09d0f8e906ff660e15c3df9c0"
   elsif OS.linux?
     url "https://github.com/weaveworks/eksctl-private/releases/download/latest_release/eksctl_Linux_amd64.tar.gz"
-    sha256 "5f11c4ae70b41afbf7309e97a5526f78fb09a83577592f54d7316aac7ae958b5"
+    sha256 "9addbef0b9aa099939178119b6cab12b2a909402289e23d92fcb15c0b4e28ab6"
   end
   
   head https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_Darwin_amd64.tar.gz
