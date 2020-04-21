@@ -12,8 +12,6 @@ class EksctlPrivate < Formula
     sha256 "0def9d793773d6dd5599057c0e4d96c6b15f305fd4fe7115eb907b9da1a4526e"
   end
   
-  head https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_Darwin_amd64.tar.gz
-  
   depends_on "kubernetes-cli"
   depends_on "aws-iam-authenticator"
 
