@@ -19,5 +19,13 @@ class Eksctl < Formula
 
   def install
     bin.install "eksctl"
+
+    # Install bash completion
+    output = Utils.popen_read("#{bin}/eksctl completion bash")
+    (bash_completion/"eksctl").write output
+
+    # Install zsh completion
+    output = Utils.popen_read("#{bin}/eksctl completion zsh")
+    (zsh_completion/"_eksctl").write output
   end
 end
