@@ -1,3 +1,4 @@
 {
-  "aws-iam-authenticator": "homebrew/core"
+  "aws-iam-authenticator": "homebrew/core",
+  "eksctl": "homebrew/core"
 }
