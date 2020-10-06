@@ -2,16 +2,16 @@
 class Eksctl < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "0.29.1"
+  version "0.29.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/weaveworks/eksctl/releases/download/0.29.1/eksctl_Darwin_amd64.tar.gz"
-    sha256 "e4797da2cf695bd235dda6c38835d63100c78a17b80e5a67ba42ddd9136e7c09"
+    url "https://github.com/weaveworks/eksctl/releases/download/0.29.2/eksctl_Darwin_amd64.tar.gz"
+    sha256 "4fa81925d4cd456e4ecb8cfc8b58ef9ec9d37a81908fb1f04800e7d9d3426a4e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/eksctl/releases/download/0.29.1/eksctl_Linux_amd64.tar.gz"
-      sha256 "25c30c224ff3798db8b527c013ad7c91213c6735f25dc2b3cd95fa532fe031d5"
+      url "https://github.com/weaveworks/eksctl/releases/download/0.29.2/eksctl_Linux_amd64.tar.gz"
+      sha256 "4cc9eb5615d2755c15400f8dafc72c6f44acf9d7ebf8e9b96c434ed79da75d04"
     end
   end
   
