@@ -5,28 +5,33 @@
 class Eksctl < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "0.57.0"
+  version "0.58.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/weaveworks/eksctl/releases/download/0.57.0/eksctl_Darwin_amd64.tar.gz"
-    sha256 "44614c4113621feacd32b5f81e8da16bad556e8712c95fb32f8532586ddb7e56"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/weaveworks/eksctl/releases/download/0.58.0/eksctl_Darwin_amd64.tar.gz"
+      sha256 "4685271a72760fd041615f2384a4174fd9d2cced30651e2745870ec7464342e0"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/weaveworks/eksctl/releases/download/0.58.0/eksctl_Darwin_arm64.tar.gz"
+      sha256 "3bf7216e6c7f54d485282a25f4e88f72673b765db7ea70e956469e037866554e"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/weaveworks/eksctl/releases/download/0.57.0/eksctl_Darwin_arm64.tar.gz"
-    sha256 "28720870cf015ef0746973c3d95f67a27b928993d103cccfd4630d056d233a6f"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/weaveworks/eksctl/releases/download/0.57.0/eksctl_Linux_amd64.tar.gz"
-    sha256 "8083539c7ac64fa86070720dfa2e9cb58df09c6316c6e41d48d6c4479b2d7e2b"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/weaveworks/eksctl/releases/download/0.57.0/eksctl_Linux_armv6.tar.gz"
-    sha256 "005f545bd60ea4929844d48211f7456b9b0e4b10efd0e98979a2b5fca9713374"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/weaveworks/eksctl/releases/download/0.57.0/eksctl_Linux_arm64.tar.gz"
-    sha256 "d934e9167b95f8f529305db7c183c2d907005df7ba1494af76c1f2dee688d669"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/weaveworks/eksctl/releases/download/0.58.0/eksctl_Linux_amd64.tar.gz"
+      sha256 "54acc16697440c14b1accc33c24776d9306611b94d1cfe7801ab054ebcff0aca"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/weaveworks/eksctl/releases/download/0.58.0/eksctl_Linux_armv6.tar.gz"
+      sha256 "93150cb8ec49419504f5b5a9141d607180d40bca4634f2dc07dba3a57cfa59d5"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/weaveworks/eksctl/releases/download/0.58.0/eksctl_Linux_arm64.tar.gz"
+      sha256 "f9f58bb9f590ffb1d1b226cc6d8e77d4cb63959163ebee83cf4028d7deab1737"
+    end
   end
 
   head "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_Darwin_amd64.tar.gz"
