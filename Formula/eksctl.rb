@@ -5,32 +5,32 @@
 class Eksctl < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "0.65.0"
+  version "0.66.0"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.65.0/eksctl_Darwin_amd64.tar.gz"
-      sha256 "d50b404ed434038b436775dd6145f781bcc1d58963584380d0ad5f708fc75195"
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.66.0/eksctl_Darwin_amd64.tar.gz"
+      sha256 "3f2ebd351543de3bfb56c73473803dda2933d87654afbda2cabc047a0e5a40ef"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.65.0/eksctl_Darwin_arm64.tar.gz"
-      sha256 "624c2dd0a7b139f8e3da971958d15a0d7826cd3c2df40168714af8068de29050"
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.66.0/eksctl_Darwin_arm64.tar.gz"
+      sha256 "2dcfa3e095d67fb4c2170657454396ffe12b5ed594ebb5d52be299c81ce8e3f0"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.65.0/eksctl_Linux_amd64.tar.gz"
-      sha256 "875db55f95ba7e13fa3b3f1158232ce3613c43c5d65408b5ef08880299a8f340"
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.66.0/eksctl_Linux_amd64.tar.gz"
+      sha256 "2a56f874809aa45fa9467d156449c472564a6fb59a214405ba89c607160de81e"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.65.0/eksctl_Linux_armv6.tar.gz"
-      sha256 "600ae22debb7d5f14df4f9075d1389640d3dde55cc88b1e03df71df86d536396"
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.66.0/eksctl_Linux_armv6.tar.gz"
+      sha256 "514b6bf28cfacecf8168f1b2ce1c4009a00d2d90cccfd8bac18ad52843ca9978"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.65.0/eksctl_Linux_arm64.tar.gz"
-      sha256 "f8b61f077832796660e637382114b719b90cb36080ca08513759a8a786355379"
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.66.0/eksctl_Linux_arm64.tar.gz"
+      sha256 "5e5147189e08f617f9c346927675f93573667d264d3b978b2709f0297fdb7c51"
     end
   end
 
