@@ -6,7 +6,6 @@ class Eksctl < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
   version "0.71.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.arm?
