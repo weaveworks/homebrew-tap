@@ -6,59 +6,41 @@ class Gitops < Formula
   desc "GitOps support for Kubernetes"
   homepage "https://docs.gitops.weave.works/docs/getting-started"
   version "0.4.1"
-  
+ 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/weaveworks/weave-gitops/releases/download/v0.4.1/gitops-darwin-arm64"
       sha256 "6e48dfaad32c7465876955a5bb770745c4104d8b09a5c30da1083e0b3e3a673f"
-
-      def install
-        bin.install "gitops"
-        bash_output = Utils.safe_popen_read(bin/"gitops", "completion", "bash")
-        (bash_completion/"gitops").write bash_output
-        zsh_output = Utils.safe_popen_read(bin/"gitops", "completion", "zsh")
-        (zsh_completion/"_gitops").write zsh_output
-      end
     end
     if Hardware::CPU.intel?
       url "https://github.com/weaveworks/weave-gitops/releases/download/v0.4.1/gitops-darwin-x86_64"
       sha256 "2b43fcbc54bc2e015fa7c27bd457c00db26e34b6e357040419950226386a7e06"
-
-      def install
-        bin.install "gitops"
-        bash_output = Utils.safe_popen_read(bin/"gitops", "completion", "bash")
-        (bash_completion/"gitops").write bash_output
-        zsh_output = Utils.safe_popen_read(bin/"gitops", "completion", "zsh")
-        (zsh_completion/"_gitops").write zsh_output
-      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.4.1/gitops-linux-x86_64"
-      sha256 "b68ad47847b522bacb5b1cbc32e4d774987cd067784c664431e40f6aa173a435"
-
-      def install
-        bin.install "gitops"
-        bash_output = Utils.safe_popen_read(bin/"gitops", "completion", "bash")
-        (bash_completion/"gitops").write bash_output
-        zsh_output = Utils.safe_popen_read(bin/"gitops", "completion", "zsh")
-        (zsh_completion/"_gitops").write zsh_output
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/weaveworks/weave-gitops/releases/download/v0.4.1/gitops-linux-arm64"
       sha256 "feb67c46a9fdd926e4425338b3fd22dadb5e39e63c40663527208c396ad6744c"
-
-      def install
-        bin.install "gitops"
-        bash_output = Utils.safe_popen_read(bin/"gitops", "completion", "bash")
-        (bash_completion/"gitops").write bash_output
-        zsh_output = Utils.safe_popen_read(bin/"gitops", "completion", "zsh")
-        (zsh_completion/"_gitops").write zsh_output
-      end
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.4.1/gitops-linux-x86_64"
+      sha256 "b68ad47847b522bacb5b1cbc32e4d774987cd067784c664431e40f6aa173a435"
+    end
+  end
+
+  head "https://github.com/weaveworks/weave-gitops/releases/download/latest_release/gitops_Darwin_amd64"
+
+  def install
+    bin.install "gitops"
+
+    # Install bash completion
+    output = Utils.popen_read("#{bin}/gitops completion bash")
+    (bash_completion/"gitops").write output
+
+    # Install zsh completion
+    output = Utils.popen_read("#{bin}/gitops completion zsh")
+    (zsh_completion/"_gitops").write output
   end
 
   test do
