@@ -60,7 +60,7 @@ class Gitops < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0..0/gitops-linux-x86_64.tar.gz"
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.6.0/gitops-linux-x86_64.tar.gz"
       sha256 "c6346ba961635aa7f4cbc367cd36c13c0c709bc473cf6637b7fce9f5cd2e5adc"
 
       def install
