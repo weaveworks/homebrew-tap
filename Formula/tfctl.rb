@@ -5,20 +5,20 @@
 class Tfctl < Formula
   desc ""
   homepage "https://weaveworks.github.io/tf-controller"
-  version "0.12.0-rc.6"
+  version "0.12.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0-rc.6/tfctl_Darwin_amd64.tar.gz"
-      sha256 "3d2207cc7cdf40fe4f4704f68610b6300a1078e8ba10073138001b4d40e394a3"
+    if Hardware::CPU.arm?
+      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0/tfctl_Darwin_arm64.tar.gz"
+      sha256 "a7396813490f1cdc1331df82a126e9c954a5768ded929b3d19e3f5a11924683f"
 
       def install
         bin.install "tfctl"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0-rc.6/tfctl_Darwin_arm64.tar.gz"
-      sha256 "7222c3615f2896df67e161b86ecf951efceb7df69c17c515dedf239499f121f1"
+    if Hardware::CPU.intel?
+      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0/tfctl_Darwin_amd64.tar.gz"
+      sha256 "30cbe518fb79483fc284b3e4c1a376e0c731df9b05b4a95ec1f45f749a92ab60"
 
       def install
         bin.install "tfctl"
@@ -27,25 +27,25 @@ class Tfctl < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0/tfctl_Linux_armv6.tar.gz"
+      sha256 "375bd8ea2521f9b092735591279f9649a562cf210774cb6b5160b5c817396c24"
+
+      def install
+        bin.install "tfctl"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0-rc.6/tfctl_Linux_arm64.tar.gz"
-      sha256 "d174c6f19f664e001a6a53da2eca433af3e917bbe1eed82d3ff3722aabfffdd6"
+      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0/tfctl_Linux_arm64.tar.gz"
+      sha256 "1c32cbd1cc3beef718a59886d5aaa7dc64f9aba648826d734edcb66af3477ec7"
 
       def install
         bin.install "tfctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0-rc.6/tfctl_Linux_amd64.tar.gz"
-      sha256 "6aceb26c3d433ffa8b181516a6dbe4acf5fc2cbe6cc829c6f9d2cef3e6a620a6"
-
-      def install
-        bin.install "tfctl"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0-rc.6/tfctl_Linux_armv6.tar.gz"
-      sha256 "a3393e25cce305371d32c2f08a6c7532fec7a82f0c18b594ec19d8997553a819"
+      url "https://github.com/weaveworks/tf-controller/releases/download/v0.12.0/tfctl_Linux_amd64.tar.gz"
+      sha256 "4775a18e83ef9ddf8c21ad87bb47c5cd19e0eb59e7cd2775cc1723a8106490a7"
 
       def install
         bin.install "tfctl"
