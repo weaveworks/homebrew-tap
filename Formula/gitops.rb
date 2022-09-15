@@ -5,12 +5,12 @@
 class Gitops < Formula
   desc "GitOps support for Kubernetes"
   homepage "https://docs.gitops.weave.works/docs/getting-started"
-  version "0.9.4"
+  version "0.9.5"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.4/gitops-darwin-x86_64.tar.gz"
-      sha256 "cf9e1db4d8d5c5cbb56a1bd7e028d74eb6991885af9b33345554d8190f5d500d"
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.5/gitops-darwin-x86_64.tar.gz"
+      sha256 "f1c6c4f4521d00fc2c04b8dc83acde1eb1be3b711467d193ee12c8991c3eba02"
 
       def install
         bin.install "gitops"
@@ -24,8 +24,8 @@ class Gitops < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.4/gitops-darwin-arm64.tar.gz"
-      sha256 "01eeee666df4cf315233d7653efebb9b5b1bb7bd25f5c7038e4d842c6d200d96"
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.5/gitops-darwin-arm64.tar.gz"
+      sha256 "130fb2ae89ef5915257b18fabff8b40fda41a11218d1e220929b5f6ae36c3bc1"
 
       def install
         bin.install "gitops"
@@ -42,8 +42,8 @@ class Gitops < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.4/gitops-linux-arm64.tar.gz"
-      sha256 "53cfb7cfdf0efc3c76fb301a446a76a806bfd88c84f9a057791a879ca9394762"
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.5/gitops-linux-arm64.tar.gz"
+      sha256 "87b6386e9181519c9d175eaf81a5e1593858b2abd0c3600dcf3028fdbe3f83a4"
 
       def install
         bin.install "gitops"
@@ -57,8 +57,8 @@ class Gitops < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.4/gitops-linux-x86_64.tar.gz"
-      sha256 "01dbe762e0ffe99cb1d6ef21955e59300cfece20b5f7f693350473ca5eeab3fe"
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.5/gitops-linux-x86_64.tar.gz"
+      sha256 "0318949e41a062416f97dcd1fa939a7b935acb8b20b92b5babac4b0aa64df934"
 
       def install
         bin.install "gitops"
