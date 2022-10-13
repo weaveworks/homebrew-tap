@@ -5,12 +5,12 @@
 class Gitops < Formula
   desc "GitOps support for Kubernetes"
   homepage "https://docs.gitops.weave.works/docs/getting-started"
-  version "0.9.6"
+  version "0.10.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.6/gitops-darwin-arm64.tar.gz"
-      sha256 "4e9097175664319fd8dfe7558717bd10a1d7b871476627dbb1e5af33dae4dadf"
+    if Hardware::CPU.intel?
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.10.0/gitops-darwin-x86_64.tar.gz"
+      sha256 "104ee3f9576198e85fcde0b18039c71b427626809cc2ca65d6e2e6a6b388176c"
 
       def install
         bin.install "gitops"
@@ -23,9 +23,9 @@ class Gitops < Formula
         (zsh_completion/"_gitops").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.6/gitops-darwin-x86_64.tar.gz"
-      sha256 "628aab25248d9d6f9a89e3b36dee81871d4c4c82cb641796d30608587b4c5901"
+    if Hardware::CPU.arm?
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.10.0/gitops-darwin-arm64.tar.gz"
+      sha256 "51134771d77da592e0f7627eceec71cd90863d33ce7542edcfebab378e3f5efc"
 
       def install
         bin.install "gitops"
@@ -41,9 +41,9 @@ class Gitops < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.6/gitops-linux-x86_64.tar.gz"
-      sha256 "6c1db2154a19d76a0391d80fa37143c36dd3e021da857dddd10244b43f6e01da"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.10.0/gitops-linux-arm64.tar.gz"
+      sha256 "827842525f733a0cf1842ec04c85277df2c1c27c0cb281f202f3cfc7e977d910"
 
       def install
         bin.install "gitops"
@@ -56,9 +56,9 @@ class Gitops < Formula
         (zsh_completion/"_gitops").write output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.9.6/gitops-linux-arm64.tar.gz"
-      sha256 "c50fbc6ff80ceafba284f31e7c9183dd67522287db48b52e3b4de23373ef9ccc"
+    if Hardware::CPU.intel?
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.10.0/gitops-linux-x86_64.tar.gz"
+      sha256 "f797d0ed87f3afee4ff1b31350d9c5920e8da11332659f99c3ef7e76a4333fb8"
 
       def install
         bin.install "gitops"
