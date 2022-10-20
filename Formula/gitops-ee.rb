@@ -5,12 +5,12 @@
 class GitopsEe < Formula
   desc "GitOps support for Kubernetes"
   homepage "https://docs.gitops.weave.works/docs/getting-started"
-  version "0.9.6-rc.1"
+  version "10.0.0-rc.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://artifacts.wge.dev.weave.works/releases/bin/0.9.6-rc.1/gitops-darwin-x86_64.tar.gz"
-      sha256 "5ba1b5e0effb94c3955d9c073388356db2e41a322cbf8d6754bba69e4a8548a9"
+    if Hardware::CPU.arm?
+      url "https://artifacts.wge.dev.weave.works/releases/bin/10.0.0-rc.1/gitops-darwin-arm64.tar.gz"
+      sha256 "2aafccd10879b77f5644bbe3544996cf52b0a9e00985b4232db4efc7322ef708"
 
       def install
         bin.install "gitops"
@@ -23,9 +23,9 @@ class GitopsEe < Formula
         (zsh_completion/"_gitops").write output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://artifacts.wge.dev.weave.works/releases/bin/0.9.6-rc.1/gitops-darwin-arm64.tar.gz"
-      sha256 "45ffcc3117a32f23842414ee672fe9afa5084f150695e92a220e2bdd11d9c78c"
+    if Hardware::CPU.intel?
+      url "https://artifacts.wge.dev.weave.works/releases/bin/10.0.0-rc.1/gitops-darwin-x86_64.tar.gz"
+      sha256 "6bc1c380e1576e873603811af82e8dae67c6335b3c6d5b12e9277527bbf867a8"
 
       def install
         bin.install "gitops"
@@ -42,8 +42,8 @@ class GitopsEe < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://artifacts.wge.dev.weave.works/releases/bin/0.9.6-rc.1/gitops-linux-x86_64.tar.gz"
-      sha256 "403a6e1a6f7ac647b53b7147477ddfa775eff985fa0ccc8ae0ed02828120c074"
+      url "https://artifacts.wge.dev.weave.works/releases/bin/10.0.0-rc.1/gitops-linux-x86_64.tar.gz"
+      sha256 "18c494f501e0ad5a7f5790e5ad0875326750d6fd4d8490a16566795a553ad2c5"
 
       def install
         bin.install "gitops"
@@ -57,8 +57,8 @@ class GitopsEe < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://artifacts.wge.dev.weave.works/releases/bin/0.9.6-rc.1/gitops-linux-arm64.tar.gz"
-      sha256 "4db2ddc70918cd67e9a7190f5d7d21292f2bbdf20a4e110554f19597b574c183"
+      url "https://artifacts.wge.dev.weave.works/releases/bin/10.0.0-rc.1/gitops-linux-arm64.tar.gz"
+      sha256 "31d36f8393ba6cc8d7f0b34dd351e29e2608a807605e61c7f85a03690f05841e"
 
       def install
         bin.install "gitops"
