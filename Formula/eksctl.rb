@@ -5,12 +5,12 @@
 class Eksctl < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "0.117.0"
+  version "0.118.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.117.0/eksctl_Darwin_arm64.tar.gz"
-      sha256 "68ec684b3c2a50398678d5505e1b9c5d2477a6982b10c8c6a1bce13373acbe4b"
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.118.0/eksctl_Darwin_arm64.tar.gz"
+      sha256 "9cf601f5504d8dd1208e447750683e893196280b40d664c9b11b8c08d4e6272f"
 
       def install
         bin.install "eksctl"
@@ -25,8 +25,8 @@ class Eksctl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.117.0/eksctl_Darwin_amd64.tar.gz"
-      sha256 "ef55736684074e145fd9d03402189854c79c01cab07aa594cefbcb9a97ab9bc7"
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.118.0/eksctl_Darwin_amd64.tar.gz"
+      sha256 "d497f155dfc11b7744cf9e060c40a51a9736fe6692106ab5d86e9e331ff7fe0a"
 
       def install
         bin.install "eksctl"
@@ -43,9 +43,9 @@ class Eksctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.117.0/eksctl_Linux_arm64.tar.gz"
-      sha256 "7970c77e3415248dd0687d17a439ffa8d4b4075e89daf31f1769e995b45a6cec"
+    if Hardware::CPU.intel?
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.118.0/eksctl_Linux_amd64.tar.gz"
+      sha256 "edce38de8fd9e715798f305acbe163d60fd39b6e6b197108053dd5c5a9acfb7d"
 
       def install
         bin.install "eksctl"
@@ -59,9 +59,9 @@ class Eksctl < Formula
         (zsh_completion/"_eksctl").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.117.0/eksctl_Linux_amd64.tar.gz"
-      sha256 "ffc6e4ad6350b2409b8b3a9658ef241df146034a9a73924a713004690b192af7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.118.0/eksctl_Linux_arm64.tar.gz"
+      sha256 "07d8d162c244d1693277929c8b6f7f62baf1a2e0302de6f1faf5ab2865585337"
 
       def install
         bin.install "eksctl"
@@ -76,8 +76,8 @@ class Eksctl < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/eksctl/releases/download/v0.117.0/eksctl_Linux_armv6.tar.gz"
-      sha256 "9237998a8faa6541c6b107ce3350fe6060dbc44e05e6bc48c341abf6cb82632b"
+      url "https://github.com/weaveworks/eksctl/releases/download/v0.118.0/eksctl_Linux_armv6.tar.gz"
+      sha256 "14148bfecc0f1a78e76a30d8c1713690d581c52444e8d380d4d15676e2902b69"
 
       def install
         bin.install "eksctl"
