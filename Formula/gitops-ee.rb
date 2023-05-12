@@ -5,12 +5,12 @@
 class GitopsEe < Formula
   desc "GitOps support for Kubernetes"
   homepage "https://docs.gitops.weave.works/docs/getting-started"
-  version "0.22.0"
+  version "0.23.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://artifacts.wge.dev.weave.works/releases/bin/0.22.0/gitops-darwin-x86_64.tar.gz"
-      sha256 "120353f836acf7620603db604547270dbcb4eba26ffc915f8d47c4811a3bfeed"
+      url "https://artifacts.wge.dev.weave.works/releases/bin/0.23.0/gitops-darwin-x86_64.tar.gz"
+      sha256 "c2831cf6f05f9e506f3dbd180d29eae554380ca36737f0e7424b033dc9cd98e0"
 
       def install
         bin.install "gitops"
@@ -24,8 +24,8 @@ class GitopsEe < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://artifacts.wge.dev.weave.works/releases/bin/0.22.0/gitops-darwin-arm64.tar.gz"
-      sha256 "358c91584ddc9c134bef495a49800897bbf7ffda68c65e239b1c9f22c8b68e4f"
+      url "https://artifacts.wge.dev.weave.works/releases/bin/0.23.0/gitops-darwin-arm64.tar.gz"
+      sha256 "54da26b72c438a51a77ec285bfe01002a0f5acd2a824fc41ad01b96cc96f47a5"
 
       def install
         bin.install "gitops"
@@ -42,8 +42,8 @@ class GitopsEe < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://artifacts.wge.dev.weave.works/releases/bin/0.22.0/gitops-linux-arm64.tar.gz"
-      sha256 "e9c88f92baf46520cf42539ecdd26812160c2152034df71db0a18b6bcf8ebd0c"
+      url "https://artifacts.wge.dev.weave.works/releases/bin/0.23.0/gitops-linux-arm64.tar.gz"
+      sha256 "0bd3a83239a81028359221e4b4eca95038cb05ab7ce3b532ffd8ad3f262301b2"
 
       def install
         bin.install "gitops"
@@ -57,8 +57,8 @@ class GitopsEe < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://artifacts.wge.dev.weave.works/releases/bin/0.22.0/gitops-linux-x86_64.tar.gz"
-      sha256 "beab7e7b626a58eb9b49d8b0d38cca6efcaf8b75e7480af90535ec794f145e8d"
+      url "https://artifacts.wge.dev.weave.works/releases/bin/0.23.0/gitops-linux-x86_64.tar.gz"
+      sha256 "c5e7ec207c421ef29afad28672819aa677f3b1952003bdf0b45a3ead6195f49a"
 
       def install
         bin.install "gitops"
