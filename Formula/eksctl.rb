@@ -5,15 +5,15 @@
 class Eksctl < Formula
   desc "The official CLI for Amazon EKS"
   homepage "https://eksctl.io/"
-  version "0.163.0"
+  version "0.164.0"
 
   depends_on "kubernetes-cli"
   depends_on "aws-iam-authenticator"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/eksctl-io/eksctl/releases/download/v0.163.0/eksctl_Darwin_amd64.tar.gz"
-      sha256 "d4a1976ad3f72a3084d18894524e65bca59251390ff1fc4a67b435b2e796eea8"
+    if Hardware::CPU.arm?
+      url "https://github.com/eksctl-io/eksctl/releases/download/v0.164.0/eksctl_Darwin_arm64.tar.gz"
+      sha256 "be60d86b55312935e6f768b39b491205f89783148720ade2069be56c8f580cf3"
 
       def install
         bin.install "eksctl"
@@ -27,9 +27,9 @@ class Eksctl < Formula
         (zsh_completion/"_eksctl").write output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/eksctl-io/eksctl/releases/download/v0.163.0/eksctl_Darwin_arm64.tar.gz"
-      sha256 "40dbcc31c028cbb34e79b47f99173f37f8caa424e650a429653fc10d10569b26"
+    if Hardware::CPU.intel?
+      url "https://github.com/eksctl-io/eksctl/releases/download/v0.164.0/eksctl_Darwin_amd64.tar.gz"
+      sha256 "70de8d6bf603eae623b259f9a5b6481d44d053f5360ae6392230eca86d4c8919"
 
       def install
         bin.install "eksctl"
@@ -47,8 +47,8 @@ class Eksctl < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/eksctl-io/eksctl/releases/download/v0.163.0/eksctl_Linux_amd64.tar.gz"
-      sha256 "a50b77e79d0821fbc92cd5aeea16852a32588e8f446b54a9d70afe858b3f81f7"
+      url "https://github.com/eksctl-io/eksctl/releases/download/v0.164.0/eksctl_Linux_amd64.tar.gz"
+      sha256 "2ed5de811dd26a3ed041ca3e6f26717288dc02dfe87ac752ae549ed69576d03e"
 
       def install
         bin.install "eksctl"
@@ -63,8 +63,8 @@ class Eksctl < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/eksctl-io/eksctl/releases/download/v0.163.0/eksctl_Linux_armv6.tar.gz"
-      sha256 "cd9d3b7c6614cffcdaed240833ea862d4a30b64fca9585882fa3fad7a6661e82"
+      url "https://github.com/eksctl-io/eksctl/releases/download/v0.164.0/eksctl_Linux_armv6.tar.gz"
+      sha256 "e46e644b0fa76bdaacdc80c0dfad787379c857e49fd24339bc534922fe3aa0c6"
 
       def install
         bin.install "eksctl"
@@ -79,8 +79,8 @@ class Eksctl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/eksctl-io/eksctl/releases/download/v0.163.0/eksctl_Linux_arm64.tar.gz"
-      sha256 "6b275ed0bedb24a70a924e126f0c00ab75fa6fe8b30f8a216aa2c52a1d877c01"
+      url "https://github.com/eksctl-io/eksctl/releases/download/v0.164.0/eksctl_Linux_arm64.tar.gz"
+      sha256 "f61204d37d45fa3b47a4f92ac0ab00ab40ca76b5d46fc4922271c7c23c175f45"
 
       def install
         bin.install "eksctl"
