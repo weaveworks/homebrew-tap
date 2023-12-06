@@ -15,11 +15,11 @@ class Gitops < Formula
       def install
         bin.install "gitops"
         # Install bash completion
-        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", { :err => :err })
+        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", err: :err)
         (bash_completion/"gitops").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", { :err => :err })
+        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", err: :err)
         (zsh_completion/"_gitops").write output
       end
     end
@@ -30,11 +30,11 @@ class Gitops < Formula
       def install
         bin.install "gitops"
         # Install bash completion
-        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", { :err => :err })
+        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", err: :err)
         (bash_completion/"gitops").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", { :err => :err })
+        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", err: :err)
         (zsh_completion/"_gitops").write output
       end
     end
@@ -48,11 +48,11 @@ class Gitops < Formula
       def install
         bin.install "gitops"
         # Install bash completion
-        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", { :err => :err })
+        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", err: :err)
         (bash_completion/"gitops").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", { :err => :err })
+        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", err: :err)
         (zsh_completion/"_gitops").write output
       end
     end
@@ -63,11 +63,11 @@ class Gitops < Formula
       def install
         bin.install "gitops"
         # Install bash completion
-        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", { :err => :err })
+        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", err: :err)
         (bash_completion/"gitops").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", { :err => :err })
+        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", err: :err)
         (zsh_completion/"_gitops").write output
       end
     end
