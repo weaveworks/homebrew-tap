@@ -5,36 +5,36 @@
 class Gitops < Formula
   desc "GitOps support for Kubernetes"
   homepage "https://docs.gitops.weave.works/docs/getting-started"
-  version "0.37.0"
+  version "0.38.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.37.0/gitops-Darwin-arm64.tar.gz"
-      sha256 "6247c728c355bac27e0c654c473c432e21a8053386e3564d5333ca5aa02f55dd"
+    if Hardware::CPU.intel?
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.38.0/gitops-Darwin-x86_64.tar.gz"
+      sha256 "be9cfdd03302d2c617f692fb00020431f48fc61c816e5aae81e4f7620d0eeab2"
 
       def install
         bin.install "gitops"
         # Install bash completion
-        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", err: :err)
+        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", { :err => :err })
         (bash_completion/"gitops").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", err: :err)
+        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", { :err => :err })
         (zsh_completion/"_gitops").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.37.0/gitops-Darwin-x86_64.tar.gz"
-      sha256 "dfd7702c8178ba176f733d4bdc7de31cebcb1e45085373233c18fb7dc242d7e9"
+    if Hardware::CPU.arm?
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.38.0/gitops-Darwin-arm64.tar.gz"
+      sha256 "92422ab738fc3c76baf2882f5e3e17b36032e18311bfce84b110b59265df3dba"
 
       def install
         bin.install "gitops"
         # Install bash completion
-        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", err: :err)
+        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", { :err => :err })
         (bash_completion/"gitops").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", err: :err)
+        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", { :err => :err })
         (zsh_completion/"_gitops").write output
       end
     end
@@ -42,32 +42,32 @@ class Gitops < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.37.0/gitops-Linux-arm64.tar.gz"
-      sha256 "e486d5d6570cbb1b9bed9238a51061c2a8ae7a67f62641d6df5386bd111c7d6a"
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.38.0/gitops-Linux-arm64.tar.gz"
+      sha256 "678b02b071683c67d673b8ae177201f3036f53019a85b85f4e65dcb9422aedff"
 
       def install
         bin.install "gitops"
         # Install bash completion
-        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", err: :err)
+        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", { :err => :err })
         (bash_completion/"gitops").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", err: :err)
+        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", { :err => :err })
         (zsh_completion/"_gitops").write output
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.37.0/gitops-Linux-x86_64.tar.gz"
-      sha256 "042df457f56270961e54b5167abe87e439f82166198bc5949cad8955a8f765a2"
+      url "https://github.com/weaveworks/weave-gitops/releases/download/v0.38.0/gitops-Linux-x86_64.tar.gz"
+      sha256 "ef9893025675eedd58205cdc7b952a38dce589085043e4977f3588c837bbb1a6"
 
       def install
         bin.install "gitops"
         # Install bash completion
-        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", err: :err)
+        output = Utils.safe_popen_read({ "SHELL" => "bash" }, "#{bin}/gitops completion bash --no-analytics", { :err => :err })
         (bash_completion/"gitops").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", err: :err)
+        output = Utils.safe_popen_read({ "SHELL" => "zsh" }, "#{bin}/gitops completion zsh --no-analytics", { :err => :err })
         (zsh_completion/"_gitops").write output
       end
     end
