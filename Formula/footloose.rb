@@ -2,9 +2,9 @@
 class Footloose < Formula
   desc "Containers that look like Virtual Machines"
   homepage "https://github.com/weaveworks/footloose"
-  url "https://github.com/weaveworks/footloose/releases/download/0.5.0/footloose-0.5.0-darwin-x86_64.tar.gz"
-  version "0.5.0"
-  sha256 "0b989621b8141dd31eb90fe0bb3aa5a12147a807dd86e7d33c990ec69e380550"
+  url "https://github.com/weaveworks/footloose/releases/download/0.6.3/footloose-0.6.3-darwin-x86_64.tar.gz"
+  version "0.6.3"
+  sha256 "8f976a37244fc8492b5065875f53b34f0069f2bd863b6e7602a766bdf0c101f7"
 
   def install
     bin.install "footloose"
